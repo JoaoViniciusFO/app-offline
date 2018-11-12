@@ -6,12 +6,28 @@
 
 <ion-content padding>
   <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Tipo</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="form.tipo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Seu nome</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="form.nome"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label fixed>Seu sobrenome</ion-label>
+      <ion-input type="text" [(ngModel)]="form.sobrenome"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label fixed>Modelo do seu carro</ion-label>
+      <ion-input type="text" [(ngModel)]="form.modeloCarro"></ion-input>
+    </ion-item>
+  
+    <button ion-button outline (click)="save()">Save</button>
+  </ion-list>
 </ion-content>

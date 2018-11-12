@@ -1,11 +1,33 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Lista
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let field of listFiles" (click)="getFields(field.name)">
+      Nome: <span>{{field.name.replace(".mv", "")}}</span>
+    </ion-item>
+  </ion-list>
 
+  <ion-card *ngIf="content">
+    <ion-row>
+      <ion-col>
+        Nome : <span>{{content.nome}}</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Sobrenome : <span>{{content.sobrenome}}</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Modelo do Carro : <span>{{content.modeloCarro}}</span>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>
